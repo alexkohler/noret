@@ -63,7 +63,7 @@ func CheckForUnusedFunctionArgs(inputPkgs []string, flags Flags) (results []stri
 
 		err := cmd.Run()
 		if err != nil {
-			return nil, false, err
+			return nil, false, fmt.Errorf("running go list, %v", err)
 		}
 		stdout := outbuf.String()
 
